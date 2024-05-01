@@ -1,0 +1,36 @@
+{
+  "name": "fullstack-3.1-series",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:ui": "rm -rf build && cd /run/media/kristian/SharedData/Ohjelmointi/React/FullStack-HY/FullStack-HY-khannula/osa2/frontend && npm run build && cp -r build /run/media/kristian/SharedData/Ohjelmointi/React/FullStack-HY/fullstack-3.1-series/",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khan5ula/fullstack-3.1-series-kh.git"
+  },
+  "author": "Kristian Hannula",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khan5ula/fullstack-3.1-series-kh/issues"
+  },
+  "homepage": "https://github.com/khan5ula/fullstack-3.1-series-kh#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.1.3",
+    "express": "^4.18.2",
+    "mongodb": "^5.6.0",
+    "mongoose": "^7.2.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.42.0",
+    "nodemon": "^2.0.22"
+  }
+}

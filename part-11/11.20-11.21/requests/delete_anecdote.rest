@@ -1,0 +1,1 @@
+DELETE http://localhost:3001/api/anecdotes/5b125467-88df-48bf-83cd-4f0a2ed37c9e

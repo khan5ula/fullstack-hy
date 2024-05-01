@@ -1,0 +1,14 @@
+{
+  "persons": [
+    {
+      "name": "Adding first person",
+      "number": "123456789",
+      "id": 1
+    },
+    {
+      "name": "Kakkos",
+      "number": "456",
+      "id": 2
+    }
+  ]
+}

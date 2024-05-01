@@ -1,0 +1,1 @@
+Lisää sovellukseen mahdollisuus antaa henkilöille puhelinnumero. Tarvitset siis lomakkeeseen myös toisen input-elementin (ja sille oman muutoksenkäsittelijän).

@@ -1,0 +1,7 @@
+PUT http://localhost:3000/todos/650305dc01480b7b6f758e9d
+Content-Type: application/json
+
+{
+    "text": "Post a new todo",
+    "done": true
+}

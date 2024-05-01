@@ -1,0 +1,14 @@
+{
+  "persons": [
+    {
+      "name": "Test Person",
+      "number": "456789465",
+      "id": 1
+    },
+    {
+      "name": "Another Test pers",
+      "number": "456789123456",
+      "id": 2
+    }
+  ]
+}

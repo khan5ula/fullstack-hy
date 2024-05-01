@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  server:
+    image: anecdotes-backend-prod
+    volumes:
+      - ./:/usr/src/app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3001:3001
+    container_name: anecdotes-backend-prod

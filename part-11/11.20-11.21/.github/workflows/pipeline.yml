@@ -1,0 +1,92 @@
+name: Deployment pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
+
+jobs:
+  deployment:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm install
+      - name: Install backend dependencies
+        run: npm install
+      - name: Check code styling
+        run: npm run lint
+      - name: Build frontend
+        working-directory: frontend
+        run: npm run build
+      - name: e2e_tests
+        uses: cypress-io/github-action@v5
+        with:
+          command: npm run test:e2e
+          start: npm start
+          wait-on: http://localhost:3001
+      - name: Build failure
+        if: failure()
+        uses: rjstone/discord-webhook-notify@v1
+        with:
+          severity: error
+          details: Build failed
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+
+  deploy_to_render:
+    name: Deploy to Render
+    runs-on: ubuntu-20.04
+    needs: deployment
+    if: ${{ github.event_name == 'push' }}
+    steps:
+      - name: Trigger deployment
+        uses: sws2apps/render-deployment@main #consider using pin for dependabot auto update
+        with:
+          serviceId: ${{ secrets.RENDER_SERVICE_ID }}
+          apiKey: ${{ secrets.RENDER_API_KEY }}
+          multipleDeployment: false #optional, default true
+
+  tag_release:
+    name: Bump version and push tag
+    runs-on: ubuntu-20.04
+    needs: deployment
+    if: ${{ github.event_name == 'push' }}
+    steps:
+      - name: Set env SKIP
+        run: echo "SKIP=$( echo ${{ contains( join(github.event.commits.*.message), '#skip') }} )" >> $GITHUB_ENV
+
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.merge_commit_sha }}
+          fetch-depth: '0'
+
+      - name: Was there a skip command?
+        run: |
+          if [[ $SKIP == true ]]; then
+            echo "#Skip found"
+          else
+            echo "#Skip not found"
+          fi
+
+      - name: Update version number
+        if: env.SKIP != 'true'
+        uses: anothrNick/github-tag-action@1.67.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BUMP: patch
+
+      - name: Build failure
+        if: env.SKIP != 'true'
+        uses: rjstone/discord-webhook-notify@v1
+        with:
+          severity: info
+          details: New version of anecdotes app just got released
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}

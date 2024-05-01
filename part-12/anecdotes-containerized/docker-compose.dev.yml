@@ -1,0 +1,31 @@
+services:
+  app:
+    image: anecdotes-frontend-dev
+    build:
+      context: ./frontend
+      dockerfile: dev.Dockerfile
+    environment:
+      - VITE_REACT_APP_BACKEND_URL=http://localhost:8080/api
+    volumes:
+      - ./frontend:/usr/src/app
+    container_name: anecdotes-frontend-dev
+
+  server:
+    image: anecdotes-backend-dev
+    build:
+      context: ./backend
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./backend:/usr/src/app
+    container_name: anecdotes-backend-dev
+
+  nginx:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx.dev.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    container_name: anecdotes-proxy-dev
+    depends_on:
+      - app
+      - server

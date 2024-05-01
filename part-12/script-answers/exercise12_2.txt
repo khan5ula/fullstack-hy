@@ -1,0 +1,22 @@
+Script started on 2023-09-09 11:04:24+03:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="158" LINES="16"]
+[0m[27m[24m[Jkameleontti# [K[?2004hexitdocker run -it ubuntu bash[?2004l
+[?2004h]0;root@0d5d2ca004e0: /root@0d5d2ca004e0:/# ls
+[?2004l[0m[01;36mbin[0m  [01;34mboot[0m  [01;34mdev[0m  [01;34metc[0m  [01;34mhome[0m  [01;36mlib[0m  [01;36mlib32[0m  [01;36mlib64[0m  [01;36mlibx32[0m  [01;34mmedia[0m  [01;34mmnt[0m  [01;34mopt[0m  [01;34mproc[0m  [01;34mroot[0m  [01;34mrun[0m  [01;36msbin[0m  [01;34msrv[0m  [01;34msys[0m  [30;42mtmp[0m  [01;34musr[0m  [01;34mvar[0m
+[?2004h]0;root@0d5d2ca004e0: /root@0d5d2ca004e0:/# cd usr/
+[?2004l[?2004h]0;root@0d5d2ca004e0: /usrroot@0d5d2ca004e0:/usr# ls
+[?2004l[0m[01;34mbin[0m  [01;34mgames[0m  [01;34minclude[0m  [01;34mlib[0m  [01;34mlib32[0m  [01;34mlib64[0m  [01;34mlibexec[0m  [01;34mlibx32[0m  [01;34mlocal[0m  [01;34msbin[0m  [01;34mshare[0m  [01;34msrc[0m
+[?2004h]0;root@0d5d2ca004e0: /usrroot@0d5d2ca004e0:/usr# cd src/
+[?2004l[?2004h]0;root@0d5d2ca004e0: /usr/srcroot@0d5d2ca004e0:/usr/src# ls
+[?2004l[?2004h]0;root@0d5d2ca004e0: /usr/srcroot@0d5d2ca004e0:/usr/src# mkdir app
+[?2004l[?2004h]0;root@0d5d2ca004e0: /usr/srcroot@0d5d2ca004e0:/usr/src# ls
+[?2004l[0m[01;34mapp[0m
+[?2004h]0;root@0d5d2ca004e0: /usr/srcroot@0d5d2ca004e0:/usr/src# cd app
+[?2004l[?2004h]0;root@0d5d2ca004e0: /usr/src/approot@0d5d2ca004e0:/usr/src/app# ls
+[?2004l[?2004h]0;root@0d5d2ca004e0: /usr/src/approot@0d5d2ca004e0:/usr/src/app# touch index.js
+[?2004l[?2004h]0;root@0d5d2ca004e0: /usr/src/approot@0d5d2ca004e0:/usr/src/app# ls
+[?2004lindex.js
+[?2004h]0;root@0d5d2ca004e0: /usr/src/approot@0d5d2ca004e0:/usr/src/app# exit
+[?2004lexit
+[0m[27m[24m[Jkameleontti# [K[?2004heexit[?2004l
+
+Script done on 2023-09-09 11:05:14+03:00 [COMMAND_EXIT_CODE="0"]

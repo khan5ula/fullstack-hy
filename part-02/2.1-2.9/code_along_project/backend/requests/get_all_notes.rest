@@ -1,0 +1,1 @@
+GET http://kameleontti:3001/api/notes

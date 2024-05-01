@@ -1,0 +1,7 @@
+PUT http://localhost:3001/api/anecdotes/VKKDeCa
+Content-Type: application/json
+
+{
+  "id": "VKKDeCa",
+  "votes": 1
+}

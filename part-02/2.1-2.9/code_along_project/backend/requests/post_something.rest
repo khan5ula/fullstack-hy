@@ -1,0 +1,8 @@
+POST http://localhost:3001/api/notes/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImtyaXN0aWFuaGFubnVsYSIsImlkIjoiNjQ4NGFhNDNhMWQwMmIzMzBmODdiM2Q5IiwiaWF0IjoxNjg2NDMxMjg1fQ.sHLwj8DoDjrNTm7xdrd089P4L2eov8Znyn5jvWkwbHU
+
+{
+    "content": "Token authorization with bearer",
+    "important": false
+}

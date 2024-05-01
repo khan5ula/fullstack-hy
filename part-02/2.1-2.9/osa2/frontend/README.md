@@ -1,0 +1,1 @@
+Korjaa ongelma osan 2 esimerkin promise ja virheet hengessä ja siten, että käyttäjälle ilmoitetaan operaation epäonnistumisesta. Onnistuneen ja epäonnistuneen operaation ilmoitusten tulee erota toisistaan.

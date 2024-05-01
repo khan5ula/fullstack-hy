@@ -1,0 +1,11 @@
+services:
+  app:
+    image: anecdotes-frontend-prod
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - 8000:80
+    container_name: anecdotes-frontend-prod

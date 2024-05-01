@@ -1,0 +1,23 @@
+Script started on 2023-09-16 11:00:25+03:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="165" LINES="40"]
+[0m[27m[24m[J[32mtodo-backend > [39m[K[?2004hnanopowernow[8Dsudo prime-select get-current[29D[18Camd        [29D                     [21Dssocker    s  ddocker exec -it todo-backend-mongo-1 bash[32D[28C    [32D[7Cyouthful_mendeleev bash[30D[26C    [30D[25C bash[30D[7Ctodo-backend-mongo-1   [30D[27C bash[32D[9D                                         [41Dddocker exec-  -it todo-backend-redis-1 bash[?2004l
+[?2004hroot@c81c5e6fd911:/data# redis-cli GET *
+[?2004l(nil)
+[?2004hroot@c81c5e6fd911:/data# redis-cli GET     KEYS *
+[?2004l1) "added_todos"
+[?2004hroot@c81c5e6fd911:/data# redis-cli GET "added_todos"
+[?2004l"0"
+[?2004hroot@c81c5e6fd911:/data# redis-cli SE  TGET "added_todos"[11PKEYS *GET "added_todos"[11PKEYS *GET "added_todos"SET[K "aGET "added_todos" 9001
+[?2004l(error) ERR wrong number of arguments for 'get' command
+[?2004hroot@c81c5e6fd911:/data# redis-cli SET "added_todos" 9001
+[?2004lOK
+[?2004hroot@c81c5e6fd911:/data# redis-cli get "added" _todos"
+[?2004l"9001"
+[?2004hroot@c81c5e6fd911:/data# echo posting a new todo now
+[?2004lposting a new todo now
+[?2004hroot@c81c5e6fd911:/data# redis-cli get "added_todos"
+[?2004l"9002"
+[?2004hroot@c81c5e6fd911:/data# exit
+[?2004lexit
+[0m[27m[24m[J[32mtodo-backend > [39m[K[?2004heexit[?2004l
+
+Script done on 2023-09-16 11:02:17+03:00 [COMMAND_EXIT_CODE="0"]

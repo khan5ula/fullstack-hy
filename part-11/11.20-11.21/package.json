@@ -1,0 +1,28 @@
+{
+  "name": "redux-anecdotes-cicd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start-prod": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint './**/*.{js,jsx}'",
+    "cypress:open": "cypress open",
+    "test:e2e": "cypress run"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "cypress": "^13.1.0",
+    "eslint": "^8.48.0",
+    "eslint-plugin-cypress": "^2.14.0",
+    "nodemon": "^3.0.1"
+  }
+}
